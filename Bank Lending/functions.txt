@@ -1,0 +1,23 @@
+
+# Random Forest
+from sklearn.ensemble import RandomForestClassifier 
+model = RandomForestClassifier(n_estimators = 50, criterion='gini')
+model.fit(X_train, y_train)
+
+# Decision Tree
+from sklearn.tree import DecisionTreeClassifier
+tree = DecisionTreeClassifier(criterion="entropy", max_depth=3, min_samples_split=2, min_samples_leaf=1)
+model = tree.fit(X_train,y_train)
+predicted = model.predict(x_test)
+
+# SVM - Support Vector Machine
+from sklearn import svm
+model = svm.SVC(kernel='rbf')
+model = model.fit(X_train,y_train)
+predicted = model.predict(x_test)
+
+
+# Logistic Regression
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression().fit(x_train,y_train)
+predict = model.predict(x_test)
